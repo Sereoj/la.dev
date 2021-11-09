@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "5a07fa29-40ed-475a-84e2-56551688fb79",
+		"name": "Laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Список стран",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/country",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание страны",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "DvbKPET1UPpskgq3pntvqAskdTT92hhj",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "XSRF-TOKEN=11",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host}}/country?name=France",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "France"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение одной страны",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/country/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновление страны",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/country/2?name=The USA",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "The USA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление страны",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "DvbKPET1UPpskgq3pntvqAskdTT92hhj",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/country/4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список городов в стране",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/country/1/city",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country",
+						"1",
+						"city"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение одного города",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/city/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"city",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать много городов в стране",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    { \"name\": \"Yekaterinburg\" },\r\n    { \"name\": \"Nizhny Novgorod\" },\r\n    { \"name\": \"Kazan\" } \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/country/1/cities",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country",
+						"1",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать город в стране",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sochi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/country/1/city",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"country",
+						"1",
+						"city"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Информация о бронировании",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/booking/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"booking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Одни апартаменты",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/apartment/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"apartment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Регистрация",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Sergey\",\r\n    \"last_name\": \"Egorov\",\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"admin\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить Booking",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Acc",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"apartment_id\": 1,\r\n    \"code\": \"1\",\r\n    \"started_at\": \"2020-10-10\",\r\n    \"ended_at\": \"2020-10-10\",\r\n    \"guests\": [\r\n        {\r\n            \"first_name\": \"Name\",\r\n            \"last_name\": \"Name\",\r\n            \"patronymic\": \"Name\",\r\n            \"birthday\": \"2002.02.02\",\r\n            \"phone\": \"123123\",\r\n            \"gender\": \"м\",\r\n            \"document_type_id\": \"1\",\r\n            \"document_number\": \"11\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/booking",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вход по API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отправка документа",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "DvbKPET1UPpskgq3pntvqAskdTT92hhj",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "document_type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/ser12/Downloads/Mikhaylov.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/document",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"document"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Все апартаменты",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/apartment",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"apartment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить документы",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "DvbKPET1UPpskgq3pntvqAskdTT92hhj",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/document",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"document"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://la.dev/public/api"
+		}
+	]
+}
